@@ -2,6 +2,7 @@
   "expo": {
     "name": "TrueCost",
     "slug": "TrueCost",
+    "scheme": "TrueCost-scheme",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,7 +26,6 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "plugins": ["expo-router"],
-    "scheme": "TrueCost-scheme"
+    "plugins": ["expo-router"]
   }
 }
