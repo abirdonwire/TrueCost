@@ -4,8 +4,8 @@ import { theme } from "../../theme";
 
 export default function Home() {
   return (
-    <View>
-      <Text>Home</Text>
+    <View style={styles.container}>
+      <Text style={{ color: theme.colors.primaryText}}>Welcome back</Text>
       
      
     </View>
@@ -13,5 +13,9 @@ export default function Home() {
 }
 
 const styles = StyleSheet.create({
-  
+  container: {
+    backgroundColor: theme.colors.background,
+    height: "100%",
+    paddingTop: 100
+  }
 });
