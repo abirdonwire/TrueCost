@@ -23,5 +23,7 @@ export const TabBarIcon = ({ color, size, type }: TabBarIconProps) => {
       return <Ionicons name="add-circle" size={size} color={color} />;
     case "settings":
       return <Fontisto name="spinner-cog" size={size} color={color} />;
+    default:
+      return null;
   }
 };

@@ -27,7 +27,7 @@ const TabsLayout = () => {
       <Tabs.Screen name="add" options={{ headerTitle: "Add", title: "Add", tabBarIcon: (props) => <TabBarIcon {...props} type='add' /> }} />
       <Tabs.Screen
         name="settings"
-        options={{ headerTitle: "Settings", title: "Settings", tabBarIcon: (props) => <TabBarIcon {...props} type='settings' />}}
+        options={{ headerTitle: "Settings", title: "Settings", headerShown: false, tabBarIcon: (props) => <TabBarIcon {...props} type='settings' />}}
       />
     </Tabs>
   );
