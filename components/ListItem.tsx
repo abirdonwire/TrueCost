@@ -54,7 +54,7 @@ export const ListItem = ({
 const styles = StyleSheet.create({
   listPressable: {
     width: "100%",
-    height: 50,
+    height: 50, 
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
