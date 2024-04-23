@@ -1,5 +1,5 @@
-import Reac, { useMemo } from "react";
-import { Text, Pressable, StyleSheet } from "react-native";
+import React, { useMemo } from "react";
+import { Text, Pressable, StyleSheet, ReactNode } from "react-native";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { theme } from "../theme/";
 
@@ -19,8 +19,8 @@ export const ListItem = ({
   swipeToDelete,
   onDelete,
   isDestructive,
-}: ListItemProps) => {
-  const item = useMemo(() => {
+}: ListItemProps): ReactNode => {
+  const item = useMemo(() => (
     <Pressable
       style={[
         styles.listPressable,
@@ -29,20 +29,22 @@ export const ListItem = ({
       onPress={onClick}
       disabled={!onClick}
     >
-      <Text style={[styles.listPressableText, styles.listPressableDestruct]}>{label}</Text>
+      <Text style={[styles.listPressableText, isDestructive ? styles.listPressableDestruct : {}]}>{label}</Text>
       {detail}
-    </Pressable>;
-  }, [label, detail]);
+    </Pressable>
+  ), [label, detail, onClick, isDestructive]);
 
   if (swipeToDelete) {
     return (
       <Swipeable
         renderRightActions={() => (
-          <Pressable style={styles.listPressableDelete}>
+          <Pressable style={styles.listPressableDelete} onPress={onDelete}>
             <Text style={styles.text}>Delete</Text>
           </Pressable>
         )}
-      ></Swipeable>
+      >
+        {item}
+      </Swipeable>
     );
   }
 
@@ -52,6 +54,7 @@ export const ListItem = ({
 const styles = StyleSheet.create({
   listPressable: {
     width: "100%",
+    height: 50,
     display: "flex",
     flexDirection: "row",
     alignItems: "center",

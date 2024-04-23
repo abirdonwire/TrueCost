@@ -7,7 +7,12 @@ const TabsLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarStyle: { backgroundColor: theme.colors.background},
+        headerStyle: {
+          backgroundColor: theme.colors.background,
+        },
+        headerTintColor: theme.colors.primaryText,
+        headerShadowVisible: false,
+        tabBarStyle: { backgroundColor: theme.colors.background, borderBlockColor: theme.colors.background},
         tabBarActiveTintColor: theme.colors.primaryText,
         tabBarInactiveTintColor: theme.colors.secondaryText,
       }}
@@ -27,7 +32,8 @@ const TabsLayout = () => {
       <Tabs.Screen name="add" options={{ headerTitle: "Add", title: "Add", tabBarIcon: (props) => <TabBarIcon {...props} type='add' /> }} />
       <Tabs.Screen
         name="settings"
-        options={{ headerTitle: "Settings", title: "Settings", headerShown: false, tabBarIcon: (props) => <TabBarIcon {...props} type='settings' />}}
+        
+        options={{ headerTitle: "Settings", title: "Settings", tabBarIcon: (props) => <TabBarIcon {...props} type='settings' /> }}
       />
     </Tabs>
   );
